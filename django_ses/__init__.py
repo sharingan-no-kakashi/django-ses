@@ -272,7 +272,7 @@ class SESBackend(BaseEmailBackend):
             },
             Content={
                 'Raw': {
-                    'Data': dkim_sign(message.message().as_bytes(linesep="\r\n"),
+                    'Data': dkim_sign(message.message().as_bytes(),
                                       dkim_key=self.dkim_key,
                                       dkim_domain=self.dkim_domain,
                                       dkim_selector=self.dkim_selector,
